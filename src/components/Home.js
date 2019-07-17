@@ -1,21 +1,21 @@
-import React,{Component} from 'react';
+import React, { Component } from 'react';
 import axios from '../httpConfig/http';
 import '../assets/css/home.scss'
 class Home extends Component {
     constructor(props) {
         super(props);
-        this.state = { 
-            list:[]
-         };
+        this.state = {
+            list: []
+        };
     }
-    componentDidMount(){
+    componentDidMount() {
         this.getGoodsList();
     }
-    getGoodsList=()=>{
+    getGoodsList = () => {
         axios.get('/productlist').then(res => {
             console.log(res.data.result)
             this.setState({
-                list:res.data.result
+                list: res.data.result
             })
         })
     }
@@ -24,19 +24,30 @@ class Home extends Component {
             <div className="home">
                 <h2>点餐平台</h2>
                 <div className="goods">
-                    <div className="goods-list">
-                        <div className="good-title">精选热菜</div>
-                        <div className="good-box">
-                            <div className="goods-box-list">
-                                <img src={require('../assets/img/1.jpg')} />
-                                <div className="goods-info">
-                                    <p className="goods-info-title">xxx</p>
-                                    <p className="goods-info-price">￥20</p>
-                                    <p></p>
+                    {
+                        this.state.list.map((value) => {
+                            return (
+                                <div className="goods-list" key={value._id}>
+                                    <div className="good-title">{value.title}</div>
+                                    <div className="good-box">
+                                        {
+                                            value.list.map((list) => {
+                                                return (
+                                                    <div className="goods-box-list" key={list._id} >
+                                                        <img src={`http://a.itying.com/${list.img_url}`} />
+                                                        <div className="goods-info">
+                                                            <p className="goods-info-title">xxx</p>
+                                                            <p className="goods-info-price">￥20</p>
+                                                        </div>
+                                                    </div>
+                                                )
+                                            })
+                                        }
+                                    </div>
                                 </div>
-                            </div>
-                        </div>
-                    </div>
+                            )
+                        })
+                    }
                 </div>
             </div>
         );

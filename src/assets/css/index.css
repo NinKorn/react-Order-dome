@@ -12,6 +12,9 @@ code {
     monospace;
 }
 
+div{
+  box-sizing: border-box;
+}
 
 
 /** 清除内外边距 **/

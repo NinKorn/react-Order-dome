@@ -6,7 +6,7 @@ class GoodsInfo extends Component {
         this.state = {  };
     }
     componentDidMount(){
-
+        
     }
     render() {
         return (

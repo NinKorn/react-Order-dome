@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from "react-router-dom";
 import axios from '../httpConfig/http';
 import '../assets/css/home.scss'
 class Home extends Component {
@@ -34,12 +35,15 @@ class Home extends Component {
                                             value.list.map((list) => {
                                                 return (
                                                     <div className="goods-box-list" key={list._id} >
-                                                        <img src={`http://a.itying.com/${list.img_url}`} />
-                                                        <div className="goods-info">
-                                                            <p className="goods-info-title">xxx</p>
-                                                            <p className="goods-info-price">￥20</p>
-                                                        </div>
+                                                        <Link to={`/GoodsInfo/:${list._id}`}>
+                                                            <img src={`http://a.itying.com/${list.img_url}`} />
+                                                            <div className="goods-info">
+                                                                <p className="goods-info-title">{list.title}</p>
+                                                                <p className="goods-info-price">￥{list.price}</p>
+                                                            </div>
+                                                        </Link>
                                                     </div>
+
                                                 )
                                             })
                                         }

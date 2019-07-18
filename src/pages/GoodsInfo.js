@@ -1,5 +1,7 @@
 import React,{Component} from 'react';
 import axios from '../httpConfig/http';
+import Shopcar from '../components/Shopcar'
+import '../assets/css/goodsInfo.scss'
 class GoodsInfo extends Component {
     constructor(props) {
         super(props);
@@ -41,6 +43,7 @@ class GoodsInfo extends Component {
                     <div className="info-p" dangerouslySetInnerHTML={{ __html: this.state.goodsInfoList.content }}>
                     </div>
                 </div>
+                <Shopcar></Shopcar>
             </div>
         );
     }

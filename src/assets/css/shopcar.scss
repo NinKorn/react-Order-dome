@@ -1,0 +1,43 @@
+.shop-car {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 0 15px;
+    height: 45px;
+    border-top: 1px solid #ccc;
+
+    .title {
+        flex: 1;
+        span {
+            font-size: 16px;
+            font-weight: 600;
+        }
+    }
+
+    .input {
+        flex: 3;
+        span:nth-of-type(2){
+            border-left: none;
+            border-right: none;
+        }
+        span {
+            padding: 7px 10px;
+            border: 1px solid #ccc;
+        }
+    }
+
+    .add-car {
+        span {
+            padding: 7px 10px;
+            background-color: red;
+            color: #fff;
+            border-radius: 5px;
+        }
+
+
+    }
+}

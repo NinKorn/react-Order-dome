@@ -63,6 +63,6 @@ html{
 	font-size: -webkit-calc(100vw/7.5);
 	/*此时定义了在750的设计稿下  1rem=100px*/
 }
-body{
+/* body{
 	font-size: 0.24rem;
-}
+} */

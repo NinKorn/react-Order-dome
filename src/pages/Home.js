@@ -35,7 +35,7 @@ class Home extends Component {
                                             value.list.map((list) => {
                                                 return (
                                                     <div className="goods-box-list" key={list._id} >
-                                                        <Link to={`/GoodsInfo/:${list._id}`}>
+                                                        <Link to={`/GoodsInfo/${list._id}`}>
                                                             <img src={`http://a.itying.com/${list.img_url}`} />
                                                             <div className="goods-info">
                                                                 <p className="goods-info-title">{list.title}</p>
